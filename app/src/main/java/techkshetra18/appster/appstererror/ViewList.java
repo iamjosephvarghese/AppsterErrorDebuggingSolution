@@ -1,5 +1,6 @@
 package techkshetra18.appster.appstererror;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ public class ViewList extends AppCompatActivity {
     List<Users> userList;
     ArrayList<Boolean> status;
     Button pay;
+    Integer count=0;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -73,15 +75,16 @@ public class ViewList extends AppCompatActivity {
                     Log.d(Integer.toString(i),(status.get(i)).toString());
                     if (status.get(i)){
 
-
-
-
-//                        TODO: start pushong to db collection paid here
-
-
+                        count++;
 
                     }
                 }
+
+
+                Intent finalIntent = new Intent(ViewList.this,FinalActivity.class);
+                finalIntent.putExtra("noSelected",count);
+                startActivity(finalIntent);
+                finish();
 
 
             }

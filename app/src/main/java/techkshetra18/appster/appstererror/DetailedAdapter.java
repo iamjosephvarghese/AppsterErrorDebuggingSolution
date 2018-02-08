@@ -93,11 +93,9 @@ public class DetailedAdapter extends RecyclerView.Adapter<DetailedAdapter.ViewHo
                 status.set(getAdapterPosition(),true);
 
                 view.setBackgroundColor(0xFF00FF00);
-//                selected.add(getAdapterPosition());
 
                 for(int i = 0;i<status.size();i++){
 
-//                    Log.d("inside for","if");
                     Log.d(Integer.toString(i),(status.get(i)).toString());
                 }
 
@@ -106,11 +104,9 @@ public class DetailedAdapter extends RecyclerView.Adapter<DetailedAdapter.ViewHo
                 Log.d("else","......");
                 status.set(getAdapterPosition(),false);
                 view.setBackgroundColor(0xFFFFFFFF);
-//                selected.remove(getAdapterPosition());
 
                 for(int i = 0;i<status.size();i++){
 
-//                    Log.d("inside for","else");
                     Log.d(Integer.toString(i),(status.get(i)).toString());
                 }
 
@@ -120,11 +116,9 @@ public class DetailedAdapter extends RecyclerView.Adapter<DetailedAdapter.ViewHo
     }
 
 
-    // Create new views (invoked by the layout manager)
     @Override
     public DetailedAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                          int viewType) {
-        // create a new view
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
         View v = inflater.inflate(R.layout.row_layout2, parent, false);
@@ -134,36 +128,17 @@ public class DetailedAdapter extends RecyclerView.Adapter<DetailedAdapter.ViewHo
         return vh;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
 
 
-
-
         Users u = userList.get(position);
 
-
         holder.event_name.setText(u.getUserName());
-//        holder.event_name.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(context, "Clicked ", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
-
-//        for (int i=0;i<detSize;i++){
-//            Details details = det.get(i);
-//            participants += details.getDisplayName();
-//            participants += "\n";
-//        }
-
         holder.p1.setText(u.getTimestamp());
 
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return userList.size();
