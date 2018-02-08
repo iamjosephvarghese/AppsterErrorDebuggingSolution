@@ -1,6 +1,7 @@
 package techkshetra18.appster.appstererror;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -54,11 +55,21 @@ public class Home extends AppCompatActivity {
         Snackbar.make(findViewById(R.id.view),date,Snackbar.LENGTH_SHORT).show();
 
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                Intent next = new Intent(Home.this,ViewList.class);
+                startActivity(next);
+                finish();
+
+            }
+        },5000);
+
+
 //        TODO we need 5 seconds delay here
 
-        Intent next = new Intent(Home.this,ViewList.class);
-        startActivity(next);
-        finish();
+
 
     }
 }
