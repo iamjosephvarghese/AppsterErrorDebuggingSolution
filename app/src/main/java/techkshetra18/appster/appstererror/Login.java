@@ -1,5 +1,8 @@
 package techkshetra18.appster.appstererror;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.wifi.hotspot2.pps.HomeSp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +15,9 @@ public class Login extends AppCompatActivity {
 
 
     EditText userName,passWord;
+
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
 
 
@@ -34,6 +40,10 @@ public class Login extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
+
+
+        sharedPreferences = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
 
 
@@ -68,7 +78,14 @@ public class Login extends AppCompatActivity {
                             flag = 1;
 
                             if(p.equals(pass[i])){
-                                Toast.makeText(Login.this, "Success", Toast.LENGTH_SHORT).show();
+
+                                editor.putString("userName",u);
+                                editor.putBoolean("isFirstLogin",false);
+
+                                Intent successIntnet = new Intent(Login.this, Home.class);
+                                startActivity(successIntnet);
+                                finish();
+
                                 break;
                             }else{
                                 Toast.makeText(Login.this, "Wrong password", Toast.LENGTH_SHORT).show();
