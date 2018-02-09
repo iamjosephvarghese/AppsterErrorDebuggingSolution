@@ -25,7 +25,7 @@ public class FinalActivity extends AppCompatActivity {
         final2 = findViewById(R.id.final2);
 
 
-        final2.setText(count);
+        final2.setText(count.toString());
 
     }
 }

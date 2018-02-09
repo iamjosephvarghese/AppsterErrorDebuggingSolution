@@ -62,13 +62,11 @@ public class ViewList extends AppCompatActivity {
             public void onClick(View view) {
 
 
-//                DetailedAdapter detailedAdapter = new DetailedAdapter();
 
                 status = ((DetailedAdapter)mAdapter).fetchSelected();
                 Log.d("status",status.toString());
 
 
-//                Log.d("try",status.toString());
 
                 for(int i = 0;i<status.size();i++){
 

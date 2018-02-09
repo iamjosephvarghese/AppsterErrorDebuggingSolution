@@ -109,4 +109,25 @@ public class Login extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        editor.commit();
+    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        editor.commit();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        editor.commit();
+    }
 }

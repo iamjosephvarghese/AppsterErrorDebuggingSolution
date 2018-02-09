@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000"
     android:id="@+id/view"
     tools:context="techkshetra18.appster.appstererror.Home">
 
@@ -36,35 +37,35 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="20dp"
-                android:src="@drawable/ic_launcher_background"/>
+                android:src="@drawable/android_image"/>
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/ic_launcher_background"/>
+                android:layout_margin="20dp"
+                android:src="@drawable/android_image"/>
+
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background"/>
+                android:layout_margin="20dp"
+                android:src="@drawable/android_image"/>
 
         </LinearLayout>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
                 android:id="@+id/button1"
                 android:text="Go To Next Page"/>
 
         </LinearLayout>
 
-
     </ScrollView>
-
-
-
-
-
 
 </android.support.constraint.ConstraintLayout>
